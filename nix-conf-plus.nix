@@ -18,6 +18,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ]
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -68,13 +70,12 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-
     # If you want to use JACK applications, uncomment this
-    # jack.enable = true;
+    #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    # media-session.enable = true;
+    #media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -116,28 +117,28 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
-  hardware.nvidia.prime = {
-    sync.enable = true;
+    prime = {
+      sync.enable = true;
 
-    # Make sure to use the correct Bus ID values for your system!
-    # Use sudo lshw -c display
-    nvidiaBusId = "PCI:14:0:0";
-    intelBusId = "PCI:0:2:0";
+      # Make sure to use the correct Bus ID values for your system!
+      # Watch out for the formatting, convert them from hexadecimal to decimal,
+      # remove the padding, replace the dot with a colon.
+      # Use sudo lshw -c display
+      nvidiaBusId = "PCI:14:0:0";
+      intelBusId = "PCI:0:2:0";
+    };
+
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.theiiird = {
     isNormalUser = true;
     description = "theiiird";
-    extraGroups = [
-      "networkmanager"
-      "libvirtd"
-      "wheel"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       firefox
+      floorp
       kate
     ];
   };
@@ -166,7 +167,7 @@
     gcc
 
     # Special
-    # zerotierone
+    zerotierone
     auto-cpufreq
     meslo-lgs-nf
 
@@ -222,19 +223,10 @@
   # };
 
   # List services that you want to enable:
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-     governor = "powersave";
-     turbo = "never";
-    };
-    charger = {
-     governor = "performance";
-     turbo = "auto";
-    };
-  };
+  # services.spice-vdagentd.enable = true;
+  # services.qemuGuest.enable = true;
 
-  # services.zerotierone.enable = true;
+  services.zerotierone.enable = true;
   services.flatpak.enable = true;
 
   xdg.portal.enable = true;
@@ -244,17 +236,27 @@
   # HyperVisor = QEMU/KVM
   # Autoconnect = checkmark
   # Connect
+  # Turn off the Default network, create a new one and name it differently.
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  # services.spice-vdagentd.enable = true;
-  # services.qemuGuest.enable = true;
-
-  # Enable flakes
-  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # Enable flakes
+  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
