@@ -169,6 +169,10 @@
     # Special
     zerotierone
     auto-cpufreq
+
+    # Customization
+    tela-circle-icon-theme
+    tela-icon-theme
     meslo-lgs-nf
 
     # Virtualization
