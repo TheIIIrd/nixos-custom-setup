@@ -190,6 +190,7 @@
   # HyperVisor = QEMU/KVM
   # Autoconnect = checkmark
   # Connect
+  # Turn off the Default network, create a new one and name it differently.
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
