@@ -87,8 +87,35 @@
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = (with pkgs; [
-      blackbox-terminal # gtk4 terminal
-      mission-center # monitor system usage
+    authenticator
+    blackbox-terminal
+    blender
+    collision
+    curtail
+    darktable
+    easyeffects
+    eartag
+    fragments
+    g4music
+    gnome-graphs
+    gnome-obfuscate
+    impression
+    inkscape
+    krita
+    metadata-cleaner
+    mission-center
+    olive-editor
+    onlyoffice-bin_latest
+    pixelorama
+    planify
+    raider
+    rnote
+    scribus
+    switcheroo
+    sysprof
+    tenacity
+    vlc
+    vscodium
     ]) ++ (with pkgs.gnomeExtensions; [
       blur-my-shell # blur look to different parts of the GNOME Shell
       quick-lang-switch # quickly switch layout
