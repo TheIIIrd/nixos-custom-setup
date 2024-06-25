@@ -86,7 +86,7 @@
     isNormalUser = true;
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; [
+    packages = (with pkgs; [
       authenticator
       blackbox-terminal
       blender
@@ -139,7 +139,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
     aria2 # download utility
     curl # transferring files
     git # version control system
