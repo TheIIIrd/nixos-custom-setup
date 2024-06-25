@@ -87,10 +87,15 @@
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = (with pkgs; [
-      blackbox-terminal # GTK 4 terminal
-      mission-center # monitor your CPU, Memory, GPU usage
+      blackbox-terminal # gtk4 terminal
+      mission-center # monitor system usage
     ]) ++ (with pkgs.gnomeExtensions; [
       blur-my-shell # blur look to different parts of the GNOME Shell
+      quick-lang-switch # quickly switch layout
+      appindicator # tray icons support
+      clipboard-indicator # clipboard manager
+      caffeine # Disable the screensaver and auto suspend
+      vitals # system monitor
     ]);
   };
 
@@ -106,20 +111,20 @@
     aria2 # command-line download utility
     curl # tool for transferring files
     git # version control system
-    wget2 # file and recursive website downloader
+    wget2 # website downloader
 
     clang # system C compiler
-    clang-tools # tools for C++ development
-    libgcc # GNU Compiler Collection
-    mono # .NET development framework
-    pipx # install python applications
-    python3Full # high-level dynamically-typed programming language
-    zulu # certified builds of OpenJDK
+    clang-tools # tools for C++ dev
+    libgcc # gnu C compiler
+    mono # dotnet dev framework
+    pipx # python package manager
+    python3Full # dynamically-typed language
+    zulu # builds of openjdk
 
-    fastfetch # like neofetch, but much faster
-    inxi # CLI system information tool
-    neovim # vim text editor fork
-    zsh # the Z shell
+    fastfetch # like neofetch
+    inxi # system information tool
+    neovim # vim fork
+    zsh # the z shell
 
     # adw-gtk3 # theme from libadwaita ported to GTK-3
     # tela-circle-icon-theme # colorful personality icon theme
