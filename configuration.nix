@@ -164,6 +164,10 @@
     meslo-lgs-nf # meslo nerd font
   ];
 
+  # Not all applications that come pre-installed with the GNOME desktop
+  # environment are desirable for everyone to have on their machines.
+  # There's a way to edit configuration.nix to exclude these kinds of
+  # packages, for example as follows:
   environment.gnome.excludePackages = (with pkgs; [
     gnome-console
     gnome-tour
