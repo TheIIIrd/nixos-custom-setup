@@ -139,7 +139,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     aria2 # download utility
     curl # transferring files
     git # version control system
@@ -194,7 +194,7 @@
   # also manages Xen and LXC (linux containers).
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-  
+
   # When running NixOS as a guest, enable the QEMU guest agent with:
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;
