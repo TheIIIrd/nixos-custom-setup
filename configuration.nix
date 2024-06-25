@@ -117,7 +117,10 @@
     inxi # CLI system information tool
     neovim # vim text editor fork
     zsh # the Z shell
-    adw-gtk3 # theme from libadwaita ported to GTK-3
+
+    # adw-gtk3 # theme from libadwaita ported to GTK-3
+    # tela-circle-icon-theme # colorful personality icon theme
+    # meslo-lgs-nf # meslo nerd font
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -157,6 +160,14 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # Flatpak is a Linux application sandboxing and distribution framework.
+  services.flatpak.enable = true;
+
+  # For the sandboxed apps to work correctly, desktop integration portals
+  # need to be installed. If you run GNOME, this will be handled automatically for you;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # xdg.portal.config.common.default = "gtk";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
