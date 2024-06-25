@@ -103,12 +103,6 @@
     git
     wget2
 
-    # System tools
-    fastfetch
-    inxi
-    neovim
-    zsh
-
     # Development and programming
     clang
     clang-tools
@@ -117,6 +111,15 @@
     pipx
     python3Full
     zulu
+
+    # System tools
+    fastfetch
+    inxi
+    neovim
+    zsh
+
+    # Theme
+    adw-gtk3
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -143,6 +146,16 @@
   # };
 
   # List services that you want to enable:
+
+  # The virt-manager application is a GUI for managing local and remote
+  # virtual machines through libvirt. It primarily targets KVM VMs, but
+  # also manages Xen and LXC (linux containers).
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  # When running NixOS as a guest, enable the QEMU guest agent with:
+  # services.qemuGuest.enable = true;
+  # services.spice-vdagentd.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
