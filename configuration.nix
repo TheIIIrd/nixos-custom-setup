@@ -138,13 +138,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    aria2 # command-line download utility
-    curl # tool for transferring files
+    aria2 # download utility
+    curl # transferring files
     git # version control system
     wget2 # website downloader
 
     clang # system C compiler
-    clang-tools # tools for C++ dev
+    clang-tools # cpp dev
     libgcc # gnu C compiler
     mono # dotnet dev framework
     pipx # python package manager
@@ -152,7 +152,8 @@
     zulu # builds of openjdk
 
     fastfetch # like neofetch
-    inxi # system information tool
+    gparted # disk partitioning
+    inxi # system information
     neovim # vim fork
     zsh # the z shell
 
