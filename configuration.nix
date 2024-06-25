@@ -124,6 +124,8 @@
       appindicator # tray icons support
       clipboard-indicator # clipboard manager
       # caffeine # Disable the screensaver and auto suspend
+      # dash-to-panel # icon taskbar
+      # arcmenu # application menu
       # vitals # system monitor
       # just-perfection # tweak tool
     ]);
