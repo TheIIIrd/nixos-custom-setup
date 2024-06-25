@@ -82,7 +82,7 @@
   users.users.theuser = {
     isNormalUser = true;
     description = "theuser";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -97,29 +97,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Download and networking
-    aria2
-    curl
-    git
-    wget2
+    aria2 # command-line download utility
+    curl # tool for transferring files
+    git # version control system
+    wget2 # file and recursive website downloader
 
-    # Development and programming
-    clang
-    clang-tools
-    libgcc
-    mono
-    pipx
-    python3Full
-    zulu
+    clang # system C compiler
+    clang-tools # tools for C++ development
+    libgcc # GNU Compiler Collection
+    mono # .NET development framework
+    pipx # install python applications
+    python3Full # high-level dynamically-typed programming language
+    zulu # certified builds of OpenJDK
 
-    # System tools
-    fastfetch
-    inxi
-    neovim
-    zsh
-
-    # Theme
-    adw-gtk3
+    fastfetch # like neofetch, but much faster
+    inxi # CLI system information tool
+    neovim # vim text editor fork
+    zsh # the Z shell
+    adw-gtk3 # theme from libadwaita ported to GTK-3
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
