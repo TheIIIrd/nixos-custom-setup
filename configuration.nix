@@ -86,7 +86,7 @@
     isNormalUser = true;
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = (with pkgs; [
+    packages = with pkgs; [
       authenticator
       blackbox-terminal
       blender
@@ -194,7 +194,7 @@
   # also manages Xen and LXC (linux containers).
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
-
+  
   # When running NixOS as a guest, enable the QEMU guest agent with:
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;
@@ -205,17 +205,12 @@
   # Flatpak is a Linux application sandboxing and distribution framework.
   services.flatpak.enable = true;
 
-  # For the sandboxed apps to work correctly, desktop integration portals
-  # need to be installed. If you run GNOME, this will be handled automatically for you;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # xdg.portal.config.common.default = "gtk";
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
+  
   # Enable flakes permanently in NixOS
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
