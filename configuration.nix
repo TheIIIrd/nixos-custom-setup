@@ -101,6 +101,21 @@
   #  wget
   ];
 
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-console
+    gnome-tour
+    snapshot # webcam tool
+  ]) ++ (with pkgs.gnome; [
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-weather
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    totem # video player
+  ]);
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
