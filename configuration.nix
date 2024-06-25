@@ -87,35 +87,35 @@
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = (with pkgs; [
-    authenticator
-    blackbox-terminal
-    blender
-    collision
-    curtail
-    darktable
-    easyeffects
-    eartag
-    fragments
-    g4music
-    gnome-graphs
-    gnome-obfuscate
-    impression
-    inkscape
-    krita
-    metadata-cleaner
-    mission-center
-    olive-editor
-    onlyoffice-bin_latest
-    pixelorama
-    planify
-    raider
-    rnote
-    scribus
-    switcheroo
-    sysprof
-    tenacity
-    vlc
-    vscodium
+      authenticator
+      blackbox-terminal
+      blender
+      collision
+      curtail
+      darktable
+      easyeffects
+      eartag
+      fragments
+      g4music
+      gnome-graphs
+      gnome-obfuscate
+      impression
+      inkscape
+      krita
+      metadata-cleaner
+      mission-center
+      olive-editor
+      onlyoffice-bin_latest
+      pixelorama
+      planify
+      raider
+      rnote
+      scribus
+      switcheroo
+      sysprof
+      tenacity
+      vlc
+      vscodium
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
     ]) ++ (with pkgs.gnomeExtensions; [
