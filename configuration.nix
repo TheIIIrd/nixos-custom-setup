@@ -210,7 +210,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  
+
   # Enable flakes permanently in NixOS
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
