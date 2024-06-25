@@ -116,6 +116,8 @@
     tenacity
     vlc
     vscodium
+    ]) ++ (with pkgs.gnome; [
+      gnome-tweaks
     ]) ++ (with pkgs.gnomeExtensions; [
       blur-my-shell # blur look to different parts of the GNOME Shell
       quick-lang-switch # quickly switch layout
