@@ -121,9 +121,9 @@
       quick-lang-switch # quickly switch layout
       appindicator # tray icons support
       clipboard-indicator # clipboard manager
-      caffeine # Disable the screensaver and auto suspend
-      vitals # system monitor
-      just-perfection # tweak tool
+      # caffeine # Disable the screensaver and auto suspend
+      # vitals # system monitor
+      # just-perfection # tweak tool
     ]);
   };
 
@@ -154,9 +154,9 @@
     neovim # vim fork
     zsh # the z shell
 
-    # adw-gtk3 # theme from libadwaita ported to GTK-3
     # tela-circle-icon-theme # colorful personality icon theme
-    # meslo-lgs-nf # meslo nerd font
+    adw-gtk3 # theme from libadwaita ported to GTK-3
+    meslo-lgs-nf # meslo nerd font
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
