@@ -96,6 +96,7 @@
       clipboard-indicator # clipboard manager
       caffeine # Disable the screensaver and auto suspend
       vitals # system monitor
+      just-perfection # tweak tool
     ]);
   };
 
