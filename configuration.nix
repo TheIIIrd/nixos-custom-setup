@@ -86,9 +86,12 @@
     isNormalUser = true;
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    packages = (with pkgs; [
+      blackbox-terminal # GTK 4 terminal
+      mission-center # monitor your CPU, Memory, GPU usage
+    ]) ++ (with pkgs.gnomeExtensions; [
+      blur-my-shell # blur look to different parts of the GNOME Shell
+    ]);
   };
 
   # Install firefox.
