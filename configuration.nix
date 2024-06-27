@@ -181,17 +181,8 @@
     epiphany # web browser
     geary # email reader
     evince # document viewer
+    # gnome-shell-extensions
     totem # video player
-  ]) ++ (with pkgs.gnomeExtensions; [
-    applications-menu
-    # removable-drive-menu
-    native-window-placement
-    places-status-indicator
-    # screenshot-window-sizer
-    system-monitor
-    # user-themes
-    window-list
-    windownavigator
   ]);
 
   # Some programs need SUID wrappers, can be configured further or are
