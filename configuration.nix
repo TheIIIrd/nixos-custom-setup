@@ -201,6 +201,10 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  # When running NixOS as a guest, enable the QEMU guest agent with:
+  # services.qemuGuest.enable = true;
+  # services.spice-vdagentd.enable = true;
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
