@@ -173,6 +173,7 @@
     gnome-tour
     snapshot # webcam tool
   ]) ++ (with pkgs.gnome; [
+    # gnome-calendar
     gnome-contacts
     gnome-maps
     gnome-music
@@ -183,6 +184,14 @@
     totem # video player
   ]) ++ (with pkgs.gnomeExtensions; [
     applications-menu
+    # removable-drive-menu
+    native-window-placement
+    places-status-indicator
+    # screenshot-window-sizer
+    system-monitor
+    # user-themes
+    window-list
+    windownavigator
   ]);
 
   # Some programs need SUID wrappers, can be configured further or are
