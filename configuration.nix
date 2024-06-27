@@ -169,7 +169,7 @@
   # There's a way to edit configuration.nix to exclude these kinds of
   # packages, for example as follows:
   environment.gnome.excludePackages = (with pkgs; [
-    gnome-console
+    # gnome-console
     gnome-tour
     snapshot # webcam tool
   ]) ++ (with pkgs.gnome; [
