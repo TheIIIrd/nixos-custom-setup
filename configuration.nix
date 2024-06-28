@@ -99,6 +99,7 @@
       g4music
       gnome-graphs
       gnome-obfuscate
+      hieroglyphic
       impression
       inkscape
       krita
