@@ -195,13 +195,18 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  # Firejail is an easy to use SUID sandbox program that reduces the risk
+  # of security breaches by restricting the running environment of untrusted
+  # applications using Linux namespaces, seccomp-bpf and Linux capabilities.
+  programs.firejail.enable = true;
 
   # The virt-manager application is a GUI for managing local and remote
   # virtual machines through libvirt. It primarily targets KVM VMs, but
   # also manages Xen and LXC (linux containers).
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+
+  # List services that you want to enable:
 
   # When running NixOS as a guest, enable the QEMU guest agent with:
   # services.qemuGuest.enable = true;
