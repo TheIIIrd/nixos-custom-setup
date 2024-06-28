@@ -87,6 +87,7 @@
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = (with pkgs; [
+      apostrophe
       authenticator
       blackbox-terminal
       blender
