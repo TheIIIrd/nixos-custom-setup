@@ -87,49 +87,50 @@
     description = "theuser";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = (with pkgs; [
-      apostrophe
-      authenticator
-      blackbox-terminal
-      blender
-      collision
-      curtail
-      darktable
-      easyeffects
-      eartag
-      fragments
-      g4music
-      gnome-graphs
-      gnome-obfuscate
-      hieroglyphic
-      impression
-      inkscape
-      krita
-      metadata-cleaner
-      mission-center
-      olive-editor
-      onlyoffice-bin_latest
-      pixelorama
-      planify
-      raider
-      rnote
-      scribus
-      switcheroo
-      sysprof
-      tenacity
-      vlc
-      vscodium
+      # one application one action
+      apostrophe # markdown editor
+      authenticator # two-factor authentication
+      blackbox-terminal # terminal
+      collision # check hashes
+      curtail # image compressor
+      eartag # music tag editor
+      easyeffects # audio effects
+      fragments # bittorrent client
+      g4music # music player
+      gnome-graphs # chart generator
+      gnome-obfuscate # information censor
+      hieroglyphic # find LaTeX symbols
+      impression # create bootable drives
+      metadata-cleaner # clean metadata
+      mission-center # system monotor
+      planify # todo list
+      raider # file shredder
+      rnote # handwritten notes
+      switcheroo # image convertor
+
+      # complex applications
+      # blender # 3d creation system
+      # darktable # darkroom
+      inkscape # vector editor
+      krita # painting application
+      olive-editor # video editor
+      onlyoffice-bin_latest # office
+      tenacity # sound editor
+      vlc # media player
+      vscodium # code editor
     ]) ++ (with pkgs.gnome; [
-      gnome-tweaks
+      gnome-tweaks # tweak gnome
     ]) ++ (with pkgs.gnomeExtensions; [
-      blur-my-shell # blur look to different parts of the GNOME Shell
-      quick-lang-switch # quickly switch layout
+      # arcmenu # application menu
+      # dash-to-panel # icon taskbar
+      blur-my-shell # blur look
       appindicator # tray icons support
       clipboard-indicator # clipboard manager
-      # caffeine # Disable the screensaver and auto suspend
-      # dash-to-panel # icon taskbar
-      # arcmenu # application menu
-      # vitals # system monitor
-      # just-perfection # tweak tool
+      caffeine # disable screensaver
+      just-perfection # tweak tool
+      quick-lang-switch # quickly switch layout
+      sane-airplane-mode # tweak airplane mode
+      vitals # system monitor
     ]);
   };
 
